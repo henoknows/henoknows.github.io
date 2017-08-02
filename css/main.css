@@ -1,8 +1,29 @@
 body {
-	padding-top: 70px; 
-	background-color: black;
+	padding-top: 70px;
 }
 
-h3,h1,p {
+/* h3,h1,p {
 	color: whitesmoke
+} */
+
+#home:not(:empty) {
+	overflow: auto;
+  /* background: rgb(48, 48, 48); */
+  border: 1px solid #ccc;
+
+  /* max-height: 44.6%; */
+  /* width: 49%; */
+  font-size: 14px;
+  font-family: monospace;
+  padding: 10px 10px 20px;
+  box-shadow: -4px 4px 2px 0 rgba(0,0,0,0.3);
+  white-space: pre-wrap;
+  outline: 0;
+}
+
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
 }
