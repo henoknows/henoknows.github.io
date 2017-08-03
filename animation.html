@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
@@ -32,27 +32,26 @@
   </nav>
 
   <div id="animationContainer">
-  <button onclick="myMove()">Click me</button>
-    <div id="animate">
-      <p> Look at me go! </p>
+    <button id="slideButton">Click me</button>
+    <button id="addButton">Add</button>
+    <div class="colorBlock" id="animate">
     </div>
   </div>
 
 </body>
-<script type="text/javascript">
-  function myMove() {
-    var elem = document.getElementById("animate"); 
-    var pos = 0;
-    var id = setInterval(frame, 5);
-    function frame() {
-      if (pos == 350) {
-        clearInterval(id);
-      } else {
-        pos++; 
-        elem.style.top = pos + 'px'; 
-        elem.style.left = pos + 'px'; 
-      }
-    }
-  }
+<script>
+$(document).ready(function(){
+    $("#slideButton").click(function(){
+        var div = $("#animate");
+        div.animate({height: '95%', opacity: '0.4'}, "slow");
+        div.animate({width: '95%', opacity: '0.8'}, "slow");
+        div.animate({height: '50%', opacity: '0.4'}, "slow");
+        div.animate({width: '50%', opacity: '0.8'}, "slow");
+    });
+
+    $("#addButton").click(function(){
+        $("#animate").append();
+    });
+});
 </script>
 </html>
